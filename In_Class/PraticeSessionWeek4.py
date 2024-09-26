@@ -47,3 +47,32 @@ def countOccurrences(aList, element):
 print(countOccurrences([1 , 1 , 0 , -2 , 1] , 1))
 #p10
 def removeOccurrences(alist,ele):
+    list2=[]
+    for i in range(0,len(alist)):
+        if(alist[i]!=ele):
+            list2.append(alist[i])
+    return list2
+print(removeOccurrences([0 , " test ", 1 , " apple ", 0 , 1.1] , 0))
+#P12
+def average(alist):
+    suma=0
+    count=0
+    for i in range(0,len(alist)):
+
+        if(alist[i]%2!=0):
+          suma+=alist[i]
+          count+=1
+    return suma/count
+
+
+print(average([99 , 89 , 74 , 63 , 100 , 100]))
+#p13
+def mix(alist):
+        temp=alist[0]
+        alist[0]=alist[-1]
+        alist[-1]=temp
+        return alist
+
+print(mix([3 , 2 , 1 , 4]))
+
+

@@ -94,5 +94,17 @@ in reverse order, starting from the last character and ending with the first. Fo
 print_reverse (" test ")
 should print t, s, e,t in that order'''
 def printReverse(string):
+    string1=""
     for i in range(1, len(string) + 1):
-      print(string[-i])
+        string1+=string[-i]
+    print(string1)
+
+printReverse("hello")
+
+#p9
+'''
+Write a function named longest string(a list) that takes a list of strings as
+input and returns the longest string from the list. If there are multiple strings of the same
+length, return the one that appears first. For example
+longest_string ([" Python ", "is", "so", "fun ", "and ", " awesome "])
+should return “awesome”.'''
