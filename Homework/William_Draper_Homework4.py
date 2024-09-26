@@ -66,4 +66,33 @@ def firstEqualsLast(n):
 print(firstEqualsLast("racecar"))
 #p6
 '''
+Write a function called print odd length(a list) that takes a list of strings as
+input and prints out all strings with odd lengths in the list. For example
+print_odd_length ([ ’apple ’, ’orange ’, ’banana ’])
+should print out ’apple’ since it is the only string with odd length'''
+def printOddLen(aList):
+    for i in aList:
+        if(len(i)%2!=0):
+           print(i)
+#p7
 '''
+Write a function called numeric sum(a list) that takes a list as input and
+returns the sum of all numeric values in the list (a numeric value could be either an integer
+or a floating number). For example
+numeric_sum ([" Hello ", 5 , 6.1 , " Apple "])
+should return 11.1'''
+def numericSum(aList):
+    sum=0
+    for i in aList:
+        if(type(i)==int or type(i)==float):
+            sum+=i
+    return sum
+print(numericSum(["Hello",5,6.1,"Apple"]))
+#p8
+'''Write a function print reverse(s) that takes a string and prints each character
+in reverse order, starting from the last character and ending with the first. For example
+print_reverse (" test ")
+should print t, s, e,t in that order'''
+def printReverse(string):
+    for i in range(1, len(string) + 1):
+      print(string[-i])
