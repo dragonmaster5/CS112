@@ -1,8 +1,4 @@
 #p5
-from wsgiref.util import request_uri
-
-from In_Class.InClassWeek4 import aList
-
 
 def listOfSquares(aList):
     list2=[]
@@ -76,3 +72,20 @@ def mix(alist):
 print(mix([3 , 2 , 1 , 4]))
 
 
+def addlists(alist,blist):
+    nlist=alist+blist
+    print(nlist)
+    j=0
+    while j<len(nlist)-1:
+        if nlist[j]>nlist[j+1]: #checks if bounds at index i is greater than bounds at index i + 1
+            temp=nlist[j+1] #if true it sets a temporary variable = to bounds at index i+1
+            nlist[j+1]=nlist[j] # then sets bounds i to bounds i + 1  and bounds i to temp
+            nlist[j]=temp
+            j=0 #resets the sequence to check if the previous number is bigger as well, i know it's not most efficient way to do that
+        else :
+            j+=1# moves to the next index in the loop
+        print(j)
+    return nlist
+
+
+print(addlists([-1,2,3],[2,-3,4]))
