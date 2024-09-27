@@ -206,12 +206,10 @@ print("the number of digits in the number is",numDigits(183173123718273))
 '''Write a Python function sum of digits(n) that takes an integer n and returns
 the sum of its digits. For example, sum of digits(132) should return 6.
 '''
-def sumOfDigits(n):
-    suma=0
-    for i in range(0,len(str(n))):
-        temp= str(n)
-        suma+=int(temp[i])
-    return suma
+def sumOfDigits(n): #sorry saw a recursive solution, had to try it.
+    if n==0:
+        return n
+    return int(n%10+sumOfDigits(n/10))
 
 print("the sum of the digits is",sumOfDigits(132))
 
