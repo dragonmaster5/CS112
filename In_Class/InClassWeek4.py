@@ -86,9 +86,6 @@ def cToF(n):
 print([cToF(i) for i in [0,20,37,100]])
 
 print([item for item in ["Grisha","Maya","Ian","Colin"] if item[-1].lower()=="a"])
-def sumOfDigits(n): #sorry saw a recursive solution, had to try it.
-    if n==0:
-        return n
-    return int(n%10+sumOfDigits(n/10))
+
 
 print(sumOfDigits(132))
