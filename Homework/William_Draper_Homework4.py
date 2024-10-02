@@ -24,7 +24,7 @@ def oddSum(n):
         if(i%2!=0):
             suma+=i
     return suma
-#print(oddSum([ -1 , 2 , -4 , 3 , 5]))
+print(oddSum([ -1 , 2 , -4 , 3 , 5]))
 #p3
 '''
 Write a function called count string(a list) that takes a list and returns the
@@ -37,7 +37,7 @@ def countString(n):
         if type(i)== type(""):
             count+=1
     return count
-#print(countString([" Hello ", 4 , "5", 5.5]))
+print(countString([" Hello ", 4 , "5", 5.5]))
 #p4
 '''
 Write a function print characters(s) that takes a string and prints each vowel
@@ -45,9 +45,7 @@ character on a new line.
 '''
 def printVowelGroups(n):
     vowels=["a","e","i","o","u","y"]
-    index =0
     for i in n:
-        index+=1
         for j in vowels:
             if(i==j):
                 print(j)
@@ -74,6 +72,7 @@ def printOddLen(aList):
     for i in aList:
         if(len(i)%2!=0):
            print(i)
+printOddLen([ "apple", "orange", "banana"])
 #p7
 '''
 Write a function called numeric sum(a list) that takes a list as input and
@@ -84,7 +83,7 @@ should return 11.1'''
 def numericSum(aList):
     sum=0
     for i in aList:
-        if(type(i)==int or type(i)==float):
+        if type(i)==int or type(i)==float:
             sum+=i
     return sum
 print(numericSum(["Hello",5,6.1,"Apple"]))
@@ -99,7 +98,7 @@ def printReverse(string):
         string1+=string[-i]
     print(string1)
 
-printReverse("hello")
+printReverse("test")
 
 #p9
 '''
