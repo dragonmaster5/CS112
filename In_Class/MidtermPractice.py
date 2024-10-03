@@ -5,6 +5,8 @@ and print them.'''
 import math
 from pickle import FLOAT
 
+from In_Class.InClassWeek5 import blist
+
 x=30
 y=7
 suma=30+7
@@ -133,3 +135,115 @@ def removeSpaces(aString):
     return newString
 print(removeSpaces("    hello World    "))
 #p13
+def buildSentence(Alist):
+    blist=""
+    for i in Alist:
+        blist+= " "+i
+
+    return blist
+print(buildSentence(["hello","I","am","bob"]))
+#p14
+def findAverage(Alist):
+    suma=0
+    for i in Alist:
+        suma+=i
+    return suma/len(Alist)
+
+#p15
+def powerList(Alist,n):
+    blist=[]
+    for i in Alist:
+        blist.append(i**n)
+    return blist
+#p16
+def productOfNotOccurences(n,no):
+    producta=1
+    for i in n:
+        if i!=no:
+            producta*=i
+    return producta
+
+print(productOfNotOccurences([1 , 2 , 3 , 4 , 2] , 2))
+#p17
+def countWords(sentence):
+    blist=[]
+    for i in sentence:
+        blist=sentence.split()
+    return len(blist)
+print(countWords("Hello i am bob"))
+#p18
+fullName=input("Please enter your Full Name: ")
+firstName=fullName.split()[0]
+print(f"hello {firstName}. How are you doing today?")
+#p19
+def reverseStrings(Alist):
+    bList=""
+    for i in range(1,len(Alist)+1):
+        bList+=Alist[-i]
+    return bList
+print(reverseStrings("hello"))
+#p20
+def sumOfPositives(Alist):
+    Suma=0
+    for i in Alist:
+        if i>0:
+            Suma+=i
+    return Suma
+print(sumOfPositives([-1,2,3,4,5,6,7]))
+#p21
+def countLessThanEle(n, ele):
+    count=0
+    for i in n:
+        if i <ele:
+            count+=1
+    return count
+print(countLessThanEle([1 , 2 , 3 , 4 , 5] ,3))
+listOfStrings=["apple","banana","cherry"]
+print([len(i) for i in listOfStrings])
+print([i for i in [1, 2, 4, 5, 10] if i%2==0])
+import math
+print([round(math.sqrt(i),1) for i in [4, 9,
+-1, 16, 25, -4] if i >0])
+
+
+
+def findMedian(Alist):
+    i=0
+    middle=int(len(Alist) / 2)
+    while i<len(Alist)-1:
+        if Alist[i]>Alist[i+1]:
+            temp= Alist[i+1]
+            Alist[i+1]=Alist[i]
+            Alist[i]=temp
+            i=i-i
+        else:
+            i+=1
+    return Alist[middle]
+
+print(findMedian([3 , 1 , 2 , 5 , 4]))
+
+def seqSort(Alist):
+    i=0
+    while i < len(Alist) - 1:
+        if Alist[i] > Alist[i + 1]:
+            temp = Alist[i + 1].lower()
+            Alist[i + 1] = Alist[i].lower()
+            Alist[i] = temp.lower()
+            i = 0
+        else:
+            i += 1
+    return Alist
+def isAnagram(word1,word2):
+    listB=[]
+    listC=[]
+    i=0
+    if len(word1)!=len(word2):
+        return False
+    for i in range(0,len(word1)):
+        listB.append(word1[i].lower())
+        listC.append(word2[i].lower())
+    listB=seqSort(listB)
+    listC=seqSort(listC)
+    return listB==listC
+
+print(isAnagram("Listen","Silent"))
