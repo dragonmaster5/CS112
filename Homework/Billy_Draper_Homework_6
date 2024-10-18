@@ -1,0 +1,65 @@
+#P1
+'''Write a function named three largest(alist) that takes a list of numbers as
+input. The function should return a list containing the three largest values from alist,
+sorted from lowest to highest. If the list contains fewer than three numbers, return the
+original list sorted from lowest to highest. For example
+three_largest ([8 , 3 , 1 , 9 , 12])'''
+def three_largest(aList):
+    Slist=sorted(aList)
+    return [Slist[len(Slist)-3],Slist[len(Slist)-2],Slist[-1]]
+print(three_largest([8 , 3 , 1 , 9 , 12]))
+#P2
+''' Write a function named find median(alist) that takes a list of numbers alist
+as input. The function should return the median value of this list. Recall that the median
+is defined as follows
+• If the list has an odd number of elements: The median is the middle value in the
+sorted list.
+• If the list has an even number of elements: The median is the average of the two
+middle values'''
+
+def findMedian(alist):
+    slist=sorted(alist)
+    if len(slist)%2!=0:
+        return slist[len(slist)//2]
+    else:
+        mAvg=(slist[len(slist)//2]+slist[(len(slist)//2)-1])//2
+        return mAvg
+
+print(findMedian([7 , 1 , 4]))
+print(findMedian([7 , 1 , 4 , 6]))
+#P3
+'''Write a function named sort by price(products) that takes a list of tuples,
+where each tuple contains a product name and its price (e.g., (”apple”, 1.50)). The function
+should return a new list of these products sorted by their price. For example
+sort_by_price ([(" banana ", 1.5) , (" apple ", 2.91) , (" orange ", 2.25)
+])
+should return
+[(" banana ", 1.5) , (" orange ", 2.25) , (" apple ", 2.91) ].
+1
+To solve this problem, you need to create another function say, get price(a product) that
+takes a product as an input and returns its price. See the practice problem file for some
+more similar examples'''
+def getPrice(Product):
+        return Product[-1]
+def sortByPrice(Products):
+    sProducts=sorted(Products,key=getPrice)
+    return sProducts
+print(sortByPrice(([(" banana ", 1.5) , (" apple ", 2.91) , (" orange ", 2.25)
+])))
+#P4
+''' Write a function named sort names(name list) that takes a list of names
+name list as input. The function should return a new list with these names sorted in
+alphabetical order, ignoring case sensitivity (recall that, in Python lowercase letters are
+greater than all uppercase letters.) For example
+sort_names ([" anne ", " charlie ", " David ", " Armin "])
+should return [”anne”, ”Armin”, ”charlie”, ”David”].
+'''
+def sort_names(alist):
+    for i in range(0,len(alist)-1):
+        if(alist[i].lower()>alist[i+1].lower()):
+            temp= alist[i]
+            alist[i]=alist[i+1]
+            alist[i+1]=temp
+            sort_names(alist)
+    return alist
+print(sort_names([" anne ", " charlie ", " David ", " Armin "]))
