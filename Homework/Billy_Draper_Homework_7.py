@@ -216,4 +216,53 @@ print(saleSummary({
 " Smartwatch ": [200 , 250 , 300]
 }))
 #p9
+'''Write a function named convert to F(temps celsius) that takes a dictionary
+of cities and their temperatures in Celsius as input and returns a new dictionary whose keys
+are the same but whose values are the corresponding temperature in Fahrenheit (rounded
+to one decimal place). For example
+temps_celsius = {" Madison ": 14 , " Hanoi ": 25 , " Chicago ": 15}
+convert_to_F ( temps_celsius )
+should return
+{" Madison ": 57.2 , " Hanoi ": 77.0 , " Chicago ": 59.0}'''
+def convertToF(tempsC):
+    for i in tempsC.keys():
+        tempsC[i]=(tempsC[i]*(9/5))+32
+    return tempsC
+print(convertToF({" Madison ": 14 , " Hanoi ": 25 , " Chicago ": 15}))
+#p10
+'''Given a dictionary where the keys are student names and the values are
+their scores, write a function named convert to letter grades(scores) that converts each
+score to a letter grade based on the following scale:
+• A: 90 - 100
+• B: 80 - 89
+• C: 70 - 79
+• D: 60 - 69
+• F: 0 - 59
+For example
+scores = {" Alice ": 95 , "Bob ": 82 , " Charlie ": 88 , " Diana ": 100}
+convert_to_letter_grades ( scores )
+should return
+4
+{" Alice ": "A", "Bob": "B", " Charlie ": "B", " Diana ": "A"}
+For this problem, it is a good idea to write a separate function named to letter(a score)
+that converts a score to a letter grade. For example
+to_letter (93)
+should return ”A”. You can then call this new function inside convert to letter grades(scores).
+Doing so would make your function easier to read/debug'''
 
+def covertToLetterGrades(Scores):
+    def toLetter(num):
+        if num >= 90 <= 100:
+            return "A"
+        elif num >= 80:
+            return "B"
+        elif num >= 70:
+            return "C"
+        elif num >= 60:
+            return "D"
+        else:
+            return "F"
+    for i in Scores.keys():
+        Scores[i]=toLetter(Scores[i])
+    return Scores
+print(covertToLetterGrades({" Alice ": 95 , "Bob ": 82 , " Charlie ": 88 , " Diana ": 100}))
