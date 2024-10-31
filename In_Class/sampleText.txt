@@ -1,0 +1,4 @@
+Hello, students!
+This is a sample file for learning how to open and read files in Python.
+Feel free to experiment with this file.
+Remember, practice makes perfect!

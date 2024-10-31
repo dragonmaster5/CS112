@@ -116,7 +116,7 @@ def frequentWords(sentence):
     maxa = ("", 0)
     for word, count in d.items():
         l.append((word, count))
-        if (count > maxa[-1]):
+        if count > maxa[-1]:
             maxa = (word, count)
     for i in range(0, len(l)):
         temp = l.pop(0)
@@ -142,11 +142,9 @@ def repeatedNumbers(aList):
             d[i] = 1
         else:
             d[i] = d[i] + 1
-    aList = []
-    for num, count in d.items():
-        if count >= 3:
-            aList.append(num)
-    return aList
+
+
+    return [num for num,count in d.items() if(count>3)]
 
 
 print(repeatedNumbers([4, 2, 3, 2, 4, 4, 1, 3, 3, 5, 2]))
