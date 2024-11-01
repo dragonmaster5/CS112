@@ -307,4 +307,74 @@ should return
 " banana ": 3 ,
 " orange ": 4
 }'''
-def productSalesData()
+def productSalesData(salesData):
+    d={}
+    for i in salesData:
+        for j,v in i.items():
+            if j =="product" and v not in d:
+                d[v]= i["quantity"]
+            elif v in d:
+                d[v]+=i["quantity"]
+    return d
+print(productSalesData([{"product": "apple", "quantity": 3} ,{"product": "banana", "quantity": 2} ,{"product": "apple", "quantity": 1} ,{"product": "orange", "quantity": 4} ,{"product": "banana", "quantity": 1}]))
+#p12
+'''Problem 12. Given the following nested dictionaries
+grades = {
+" Alice ": {
+" Math ": 85 ,
+" English ": 78 ,
+" Science ": 92
+} ,
+"Bob": {
+" Math ": 90 ,
+" English ": 82 ,
+" Science ": 88
+} ,
+" Charlie ": {
+" Math ": 95 ,
+" English ": 97 ,
+" Science ": 91
+}
+}
+5
+(1) Create a dictionary where the keys are student names and the values are their
+average scores across Math, English, and Science.
+(2) Find the list of students who have the highest scores in Math.
+(3) Find the list of students whose Math score is higher than their English scor'''
+grades={
+" Alice ": {
+" Math ": 85 ,
+" English ": 78 ,
+" Science ": 92
+} ,
+"Bob": {
+" Math ": 90 ,
+" English ": 82 ,
+" Science ": 88
+} ,
+" Charlie ": {
+" Math ": 95 ,
+" English ": 97 ,
+" Science ": 91
+}
+}
+d={}
+for i,v in grades.items():
+    d.update({i: sum(grades[i].values()) / 3})
+print(d)
+d.clear()
+for i,v in grades.items():
+        d.update({i: grades[i][" Math "]})
+l=[]
+for j,k in d.items():
+    if k==max(d.values()):
+        l.append(j)
+print(l)
+d.clear()
+l=[i for i in grades.keys() if grades[i][" Math "] > grades[i][" English "]]
+print(l)
+
+
+
+
+
