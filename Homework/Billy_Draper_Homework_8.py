@@ -53,7 +53,11 @@ print(totalPrice({"fries": 7, "hot dogs": 9, "soda": 9}, {"fries": 1.5,
 #P3
 '''Write a function called duplicated data(dictionary1, dictionary2) that takes
 in dictionary1 and dictionary2 as parameters and returns a dictionary with key-value pairs
-that are in both dictionaries. For example,'''
+that are in both dictionaries. For example,
+duplicated_data ({" apple ": 10 , " banana " : 20 , " cherry " : 30} , {"
+apple ": 10 , " banana " : 20 , " mango " : 5})
+should return
+{" apple ": 10 , " banana ": 20}.'''
 
 
 def duplicatedData(d1, d2):
