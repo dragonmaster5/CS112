@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 #Problem 1
 '''Problem 1. Given the following sets
 s1 = {1 , 2 , 3 , 4 , -2 , -3}
